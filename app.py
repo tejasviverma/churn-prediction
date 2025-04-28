@@ -1,6 +1,21 @@
+import os
+import gdown
 from flask import Flask, request, jsonify
 import joblib
 import numpy as np
+
+# ✅ Check if model file exists, if not, download
+if not os.path.exists('churn_model_rf.pkl'):
+    print("Downloading churn_model_rf.pkl...")
+    gdown.download('https://drive.google.com/uc?id=1HgESyzQNwkTnM65kfiF6wLLNgyBJ-7GP', 'churn_model_rf.pkl', quiet=False)
+
+# ✅ Check if scaler file exists, if not, download
+if not os.path.exists('scaler.pkl'):
+    print("Downloading scaler.pkl...")
+    gdown.download('https://drive.google.com/uc?id=1Ql41eIzIFYDW4cV7Oh5fpZzZfimAe3-o', 'scaler.pkl', quiet=False)
+# Now safe to load
+model = joblib.load('churn_model_rf.pkl')
+scaler = joblib.load('scaler.pkl')
 
 # Load model and scaler
 model = joblib.load('churn_model_rf.pkl')
