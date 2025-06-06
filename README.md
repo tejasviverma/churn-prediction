@@ -2,12 +2,6 @@
 
 A full-stack web application that predicts whether a customer is likely to churn based on their service usage and demographic information.
 
-## 🚀 Demo
-Try the web app here: **[🔗 Deployed URL](https://your-deployment-link.com)**  
-_(Replace with your actual deployment link)_
-
----
-
 ## 📌 Project Overview
 
 This project uses a machine learning model to predict customer churn. It includes:
